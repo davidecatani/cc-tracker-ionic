@@ -6,12 +6,28 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" *ngIf="!!workout && !!movements">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Workout</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="goToPrevious()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToNext()">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>{{today}}</ion-title>
+  </ion-toolbar>
+
   <ngb-accordion *ngIf="movements.length > 0" [closeOthers]="true">
     <ngb-panel *ngFor="let movement of movements; let i = index">
       <ng-template ngbPanelTitle>

@@ -15,6 +15,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import * as fromWorkout from './store/reducer/workout.reducer';
 import { ReactiveFormsModule } from '@angular/forms';
+import { IonicStorageModule } from '@ionic/storage';
 
 const components = [
   AppComponent
@@ -26,7 +27,8 @@ const modules = [
   AppRoutingModule,
   SharedModule,
   NgbModule,
-  ReactiveFormsModule
+  ReactiveFormsModule,
+  IonicStorageModule.forRoot()
 ];
 
 @NgModule({

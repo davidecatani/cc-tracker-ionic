@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { getToday } from 'src/app/utility/functions';
+
+const today = getToday(new Date());
 
 const routes: Routes = [
   {
@@ -8,7 +11,7 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'workout',
+        path: 'workout/:day',
         children: [
           {
             path: '',
@@ -39,14 +42,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: `/tabs/workout/${today}`,
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: `/tabs/workout/${today}`,
     pathMatch: 'full'
   }
 ];

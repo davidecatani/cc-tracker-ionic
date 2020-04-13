@@ -4,6 +4,8 @@ import { first } from 'rxjs/operators'
 import { Weekday } from 'src/app/interfaces/weekday';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
+import { Storage } from '@ionic/storage';
+
 import { Movement } from 'src/app/interfaces/movements';
 import { movements } from 'src/app/models/movements';
 import { updateWorkout } from 'src/app/store/actions/workout.actions';
@@ -21,7 +23,8 @@ export class SchedulePage implements OnInit, OnDestroy {
   private subs: Subscription[];
 
   constructor(
-    private store: Store<{ workout: Weekday[] }>
+    private store: Store<{ workout: Weekday[] }>,
+    private storage: Storage
   ) {
     this.movements = movements;
     this.subs = [];
@@ -35,6 +38,9 @@ export class SchedulePage implements OnInit, OnDestroy {
         this.formInit(workout);
       })
     ];
+    this.storage.get('workout').then((val) => {
+      console.log(val);
+    });
   }
 
   formInit(workout: Weekday[]): void {
@@ -81,7 +87,8 @@ export class SchedulePage implements OnInit, OnDestroy {
         }
       });
     });
-    this.store.dispatch(updateWorkout({ payload: this.workout }))
+    this.store.dispatch(updateWorkout({ payload: this.workout }));
+    this.storage.set('workout', this.workout);
   }
 
   ngOnDestroy(): void { 

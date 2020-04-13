@@ -19,7 +19,7 @@ export const initialState: Weekday[] = [
         movements: []
     },
     {
-        name: 'Thuesday',
+        name: 'Thursday',
         id: 4,
         movements: []
     },
@@ -35,14 +35,14 @@ export const initialState: Weekday[] = [
     },
     {
         name: 'Sunday',
-        id: 7,
+        id: 0,
         movements: []
     }
 ];
 
 const workoutReducer = createReducer(
     initialState,
-    on(WorkoutActions.updateWorkout, (state, workout) => ({ ...workout.payload }))
+    on(WorkoutActions.updateWorkout, (state, workout) => ([ ...workout.payload ]))
 );
 
 export function reducer(state: Weekday[] | undefined, action: Action) {
