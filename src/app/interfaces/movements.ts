@@ -1,5 +1,6 @@
 export interface Movement {
     name: string;
+    id: number;
     steps: Step[];
 }
 

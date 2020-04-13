@@ -27,6 +27,8 @@
     "@ionic/angular": "^5.0.0",
     "@ionic/pwa-elements": "^1.5.2",
     "@ng-bootstrap/ng-bootstrap": "^6.0.2",
+    "@ngrx/store": "^9.1.0",
+    "@ngrx/store-devtools": "^9.1.0",
     "bootstrap": "^4.4.1",
     "core-js": "^2.5.4",
     "rxjs": "~6.5.1",

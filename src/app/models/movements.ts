@@ -3,6 +3,7 @@ import { Movement } from '../interfaces/movements';
 export const movements: Movement[] = [
     {
         name: 'Pushup',
+        id: 1,
         steps: [
             {
                 name: 'Wall pushups',
@@ -230,6 +231,7 @@ export const movements: Movement[] = [
     },
     {
         name: 'Squat',
+        id: 2,
         steps: [
             {
                 name: 'Shoulderstand squats',
@@ -457,6 +459,7 @@ export const movements: Movement[] = [
     },
     {
         name: 'Pullup',
+        id: 3,
         steps: [
             {
                 name: 'Vertical pulls',
@@ -684,6 +687,7 @@ export const movements: Movement[] = [
     },
     {
         name: 'Leg raise',
+        id: 4,
         steps: [
             {
                 name: 'Knee tucks',
@@ -899,6 +903,7 @@ export const movements: Movement[] = [
     },
     {
         name: 'Bridge',
+        id: 5,
         steps: [
             {
                 name: 'Short bridges',
@@ -1114,6 +1119,7 @@ export const movements: Movement[] = [
     },
     {
         name: 'Handstand pushup',
+        id: 6,
         steps: [
             {
                 name: 'Wall headstands',

@@ -9,9 +9,26 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Schedule</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <form *ngIf="!!workoutForm" [formGroup]="workoutForm">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col" *ngFor="let day of workout">{{day.name}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let movement of movements" formGroupName="{{movement.name}}">
+          <th scope="row">{{movement.name}}</th>
+          <td *ngFor="let day of workout" class="center">
+            <ion-checkbox slot="end" formControlName="{{day.name}}"></ion-checkbox>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <ion-button expand="block" (click)="formSubmit()">Submit</ion-button>
+  </form>
 </ion-content>

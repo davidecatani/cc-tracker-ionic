@@ -10,6 +10,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import * as fromWorkout from './store/reducer/workout.reducer';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const components = [
   AppComponent
@@ -20,7 +25,8 @@ const modules = [
   IonicModule.forRoot(),
   AppRoutingModule,
   SharedModule,
-  NgbModule
+  NgbModule,
+  ReactiveFormsModule
 ];
 
 @NgModule({
@@ -29,7 +35,9 @@ const modules = [
   ],
   entryComponents: [],
   imports: [
-    ...modules
+    ...modules,
+    StoreModule.forRoot({ workout: fromWorkout.reducer }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [
     StatusBar,
