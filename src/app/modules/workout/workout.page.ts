@@ -8,11 +8,11 @@ import { Weekday } from 'src/app/interfaces/weekday';
 import { movements } from 'src/app/models/movements';
 
 @Component({
-  selector: 'app-tab1',
-  templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+  selector: 'app-workout',
+  templateUrl: 'workout.page.html',
+  styleUrls: ['workout.page.scss']
 })
-export class Tab1Page implements OnInit, OnDestroy {
+export class WorkoutPage implements OnInit, OnDestroy {
 
   public movements: Movement[];
   public workout: Weekday[];

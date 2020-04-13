@@ -17,7 +17,7 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col" *ngFor="let day of workout">{{day.name}}</th>
+          <th scope="col" *ngFor="let day of workout">{{day.name|slice:0:3}}</th>
         </tr>
       </thead>
       <tbody>

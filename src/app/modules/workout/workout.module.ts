@@ -4,7 +4,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { Tab1Page } from './tab1.page';
+import { WorkoutPage } from './workout.page';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
@@ -14,11 +14,11 @@ import { SharedModule } from 'src/app/shared/shared.module';
     FormsModule,
     SharedModule,
     NgbModule,
-    RouterModule.forChild([{ path: '', component: Tab1Page }])
+    RouterModule.forChild([{ path: '', component: WorkoutPage }])
   ],
   declarations: [
-    Tab1Page
+    WorkoutPage
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class Tab1PageModule {}
+export class WorkoutPageModule {}
