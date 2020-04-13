@@ -1,11 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Movement } from '../interfaces/movements';
-import { movements } from '../models/movements';
 import { Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { Weekday } from '../interfaces/weekday';
 import { first } from 'rxjs/operators';
 import { Router, NavigationEnd } from '@angular/router';
+import { Movement } from 'src/app/interfaces/movements';
+import { Weekday } from 'src/app/interfaces/weekday';
+import { movements } from 'src/app/models/movements';
 
 @Component({
   selector: 'app-tab1',

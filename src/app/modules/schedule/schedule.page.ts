@@ -2,18 +2,18 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { first } from 'rxjs/operators'
 import { Weekday } from 'src/app/interfaces/weekday';
-import { Movement } from '../interfaces/movements';
-import { movements } from '../models/movements';
 import { FormGroup, FormControl } from '@angular/forms';
-import { updateWorkout } from '../store/actions/workout.actions';
 import { Subscription } from 'rxjs';
+import { Movement } from 'src/app/interfaces/movements';
+import { movements } from 'src/app/models/movements';
+import { updateWorkout } from 'src/app/store/actions/workout.actions';
 
 @Component({
-  selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss']
+  selector: 'app-schedule',
+  templateUrl: 'schedule.page.html',
+  styleUrls: ['schedule.page.scss']
 })
-export class Tab2Page implements OnInit, OnDestroy {
+export class SchedulePage implements OnInit, OnDestroy {
 
   public movements: Movement[];
   public workout: Weekday[];
